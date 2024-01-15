@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бутинський Ліцей</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            height: 200px; /* Висота верхньої рамки */
+            overflow: hidden; /* Щоб обрізати текст за рамкою */
+        }
+
+        header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(5px); /* Додаємо ефект розмиття */
+        }
+
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Півпрозорий чорний фон */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Тінь для тексту */
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            transition: top 0.3s;
+        }
+
+        nav.fixed {
+            position: fixed;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            font-weight: bold;
+            border: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        nav a:hover {
+            border-color: #fff;
+        }
+
+        section {
+            padding: 20px;
+            border-bottom: 10px solid #808080;
+            margin-top: 60px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .school-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .school-info img {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 5px solid #fff;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="D:\Нова папка\Foto\1.jpg" alt="Замініть на ваше фото">
+        <div class="overlay">
+            <h1>Бутинський Ліцей</h1>
+        </div>
+    </header>
+    <nav id="navbar">
+        <a href="#home">Головна</a>
+        <a href="#courses">Новини</a>
+        <a href="#about">Про нас</a>
+        <a href="#contact">Контакти</a>
+    </nav>
+    <section id="home">
+        <div class="school-info">
+            <img src="school-image.jpg" alt="Школа програмування">
+            <div class="school-description">
+                <h2>Ласкаво просимо до нашої школи програмування</h2>
+                <p>Навчайтеся програмуванню від кращих викладачів та отримуйте високоякісні знання. Наша місія - надавати
+                    студентам
+                    потужні інструменти для досягнення успіху в сфері програмування та розробки.</p>
+                <p>Ми пропонуємо різноманітні курси, від основ до високоспеціалізованих тем, щоб ви могли розширити свої
+                    навички та
+                    стати професіоналом у своїй галузі.</p>
+            </div>
+        </div>
+    </section>
+    <section id="courses">
+        <h2>Наші курси</h2>
+        <ul>
+            <li>Основи HTML, CSS, JS</li>
+            <li>Розробка веб-додатків</li>
+            <ли>Мобільний розвиток</li>
+            <li>Бази даних та SQL</li>
+        </ul>
+    </section>
+    <section id="about">
+        <h2>Про нас</h2>
+        <p>Ми надаємо високоякісну освіту з програмування для учнів будь-якого рівня. Наші викладачі - професіонали
+            у своїй справі.</p>
+    </section>
+    <section id="contact">
+        <h2>Контакти</h2>
+        <p>Зв'яжіться з нами за адресою: example@email.com</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 . Всі права захищені.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var navbar = document.getElementById("navbar");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                navbar.classList.add("fixed");
+            } else {
+                navbar.classList.remove("fixed");
+            }
+        }
+    </script>
+</body>
+
+</html>
